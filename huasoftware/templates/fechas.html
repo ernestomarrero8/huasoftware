@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Fechas{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-9 col-lg-12 col-xl-10 offset-xl-0">
+            <div class="card shadow-lg o-hidden border-0 my-5">
+                <div class="card-body p-0">
+                    <div class="row">
+                        <div class="col-lg-6 d-none d-lg-flex">
+                            <div class="flex-grow-1 bg-login-image" style="background-image: url('{{ url_for('static', filename='assets/dogs/image3.jpeg') }}');">
+                                <img src="{{ url_for('static', filename='assets/img/rodeoLogo.png') }}" height="280" width="900">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <img src="{{ url_for('static', filename='assets/img/clipboard-image-2.png') }}">
+                        </div>
+                        <div class="col"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}Registro{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center align-items-baseline">
+        <div class="col-md-9 col-lg-12 col-xl-10">
+            <div class="card shadow-lg o-hidden border-0 my-5">
+                <div class="card-body p-0">
+                    <div class="row">
+                        <div class="col-lg-6 d-none d-lg-flex">
+                            <div class="flex-grow-1 bg-login-image" style="background-image: url('{{ url_for('static', filename='assets/dogs/image3.jpeg') }}');">
+                                <div class="p-5">
+                                    <div class="text-center">
+                                        <h5 class="text-primary mb-4">Datos del jinete</h5>
+                                    </div>
+                                    <form class="user" method="POST" action="{{ url_for('main.registro') }}">
+                                        <div class="mb-3">
+                                            <input class="form-control form-control-sm form-control-user" type="text" id="exampleInputPassword" placeholder="Ingrese rut (11222333-4)" name="rut" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <input class="form-control form-control-sm form-control-user" type="text" id="exampleInputPassword-2" placeholder="Ingrese nombre" name="nombre" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <input class="form-control form-control-sm form-control-user" type="text" id="exampleInputPassword-3" placeholder="Ingrese apellidos" name="apellidos" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <input class="form-control form-control-sm form-control-user" type="text" id="exampleInputPassword-4" placeholder="Ingrese fecha de nacimiento (01/01/2024)" name="nacimiento" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <input class="form-control form-control-sm form-control-user" type="text" id="exampleInputPassword-5" placeholder="Ingrese ciudad" name="ciudad" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <input class="form-control form-control-sm form-control-user" type="text" id="exampleInputPassword-6" placeholder="Ingrese país" name="pais" required>
+                                        </div>
+                                        <h5 class="text-center text-primary mb-4">Datos del caballo</h5>
+                                        <div class="mb-3">
+                                            <input class="form-control form-control-sm form-control-user" type="text" id="exampleInputPassword-7" placeholder="Ingrese nombre del caballo o yegua" name="nombrecaballo" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <input class="form-control form-control-sm form-control-user" type="number" id="exampleInputPassword-8" placeholder="Ingrese número de inscripción" name="inscripcion" required>
+                                        </div>
+                                        <div class="text-center"></div>
+                                        <div class="text-center"></div>
+                                        <button class="btn btn-primary d-block btn-user w-100" type="reset">Limpiar datos</button>
+                                        <div class="mb-3">
+                                            <div class="custom-control custom-checkbox small"></div>
+                                        </div>
+                                        <button class="btn btn-primary d-block btn-user w-100" type="submit">Guardar</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 col-lg-6 col-xl-5">
+                            <div class="custom-control custom-checkbox small"></div>
+                            <img src="{{ url_for('static', filename='assets/img/rodeoLogo.png') }}" height="230">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

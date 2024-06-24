@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block title %}Puntaje{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center align-items-baseline">
+    <div class="col-md-9 col-lg-12 col-xl-10">
+        <div class="card shadow-lg o-hidden border-0 my-5">
+            <div class="card-body p-0">
+                <div class="row">
+                    <div class="col-lg-6 d-none d-lg-flex">
+                        <div class="container flex-grow-1 bg-login-image" style="background-image: url('{{ url_for('static', filename='assets/dogs/image3.jpeg') }}');">
+                            <img src="{{ url_for('static', filename='assets/img/rodeoLogo.png') }}" height="230">
+                        </div>
+                    </div>
+                    <div class="col-8 col-lg-6 col-xl-5">
+                        <div class="p-5">
+                            <div class="text-center">
+                                <h5 class="text-primary mb-4">Jinete - Participante</h5>
+                            </div>
+                            <form class="user" method="POST" action="{{ url_for('main.puntaje') }}">
+                                <div class="mb-3">
+                                    <input class="form-control form-control-sm form-control-user" type="text" id="exampleInputPassword-1" placeholder="ID de participante" name="idhuaso" required>
+                                </div>
+                                <div class="mb-3">
+                                    <input class="form-control form-control-sm form-control-user" type="text" id="exampleInputPassword-10" placeholder="Puntaje 1" name="ptje1" required>
+                                </div>
+                                <div class="mb-3">
+                                    <input class="form-control form-control-sm form-control-user" type="text" id="exampleInputPassword-11" placeholder="Puntaje 2" name="ptje2" required>
+                                </div>
+                                <div class="mb-3">
+                                    <input class="form-control form-control-sm form-control-user" type="text" id="exampleInputPassword-12" placeholder="Puntaje 3" name="ptje3" required>
+                                </div>
+                                <button class="btn btn-primary d-block btn-user w-100" type="submit">Guardar puntaje</button>
+                                <a class="btn btn-primary d-block btn-user w-100" href="{{ url_for('main.index') }}">Volver</a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="container-fluid">
+                        <div class="card shadow">
+                            <div class="card-header py-3">
+                                <p class="text-primary m-0 fw-bold">Historial de puntaje</p>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6 text-nowrap"></div>
+                                </div>
+                                <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
+                                    <table class="table my-0" id="dataTable">
+                                        <thead>
+                                            <tr>
+                                                <th>Nombre</th>
+                                                <th>Puntaje</th>
+                                                <th>Fecha</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for puntaje in puntajes %}
+                                            <tr>
+                                                <td>{{ puntaje.huaso.nombre }} {{ puntaje.huaso.apellidos }}</td>
+                                                <td>{{ puntaje.puntaje }}</td>
+                                                <td>{{ puntaje.fecha }}</td>
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
