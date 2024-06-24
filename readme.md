@@ -36,15 +36,16 @@ huasoftware/
 ├── Dockerfile
 ├── docker-compose.yml
 ├── run.py
-Instalación
-Requisitos
+
+
+## Requisitos
 Docker
 Docker Compose
 
 
 ## Clona el repositorio:
 
-git clone <URL_DEL_REPOSITORIO>
+git clone https://github.com/ernestomarrero8/huasoftware
 cd huasoftware 
 
 ## Construye y levanta los contenedores de Docker:
